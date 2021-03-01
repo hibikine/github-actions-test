@@ -1,0 +1,15 @@
+name: Depend Action
+on:
+  workflow_run:
+    workflows:
+      - Sample
+      - Sample2
+    types:
+      - completed
+
+jobs:
+  js_web:
+    name: nyan
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "helo!"
